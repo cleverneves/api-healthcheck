@@ -6,6 +6,10 @@ app = Flask(__name__)
 def health():
     return jsonify({"status": "ok"})
 
+@app.route("/liveness")
+def liveness():
+    return jsonify({"status": "I'm alive!"})
+
 @app.route("/")
 def root():
     return jsonify({"message": "Hello from myapp!"})
